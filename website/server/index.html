@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Assistant</title>
+</head>
+<body>
+    <h1>AI Assistant</h1>
+    <form method="POST">
+        <label for="prompt">Enter your prompt:</label><br>
+        <textarea id="prompt" name="prompt" rows="5" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if prompt %} 
+        <h2>Results</h2>
+        <p><b>Prompt:</b> {{ prompt }}</p>
+        <p><b>Domain:</b> {{ domain }}</p>
+        <p><b>Output:</b></p>
+        <pre>{{ output }}</pre> {% if error %}
+        <p style="color: red;"><b>Error:</b> {{ error }}</p>
+        {% endif %}
+        <p><b>Time taken:</b> {{ time_taken }} seconds</p> 
+    {% endif %}
+</body>
+</html>
